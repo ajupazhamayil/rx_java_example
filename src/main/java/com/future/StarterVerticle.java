@@ -1,6 +1,7 @@
 package com.future;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.ext.web.Router;
 
 import java.util.logging.Logger;
 
@@ -10,8 +11,9 @@ public class StarterVerticle extends AbstractVerticle {
 
     @Override
     public void start(){
-        vertx.deployVerticle(new RequestHandlerVerticle());
-        vertx.deployVerticle(new CollectorVerticle());
+        Router router = Router.router(vertx);
+        vertx.deployVerticle(new RequestHandlerVerticle(router));
+        vertx.deployVerticle(new CollectorVerticle(router));
         log.info("All verticles has been signalled");
     }
 

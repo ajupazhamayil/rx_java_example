@@ -13,11 +13,11 @@ public class RequestHandlerVerticle extends AbstractVerticle {
 
     static Logger log = Logger.getLogger(RequestHandlerVerticle.class.getName());
 
-    private final Router router;
+    private Router router;
     private HttpServer server;
 
-    public RequestHandlerVerticle() {
-        this.router = Router.router(vertx);
+    public RequestHandlerVerticle(Router router) {
+        this.router = router;
     }
 
     @Override
