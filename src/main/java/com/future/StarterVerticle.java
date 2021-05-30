@@ -14,6 +14,7 @@ public class StarterVerticle extends AbstractVerticle {
         Router router = Router.router(vertx);
         vertx.deployVerticle(new RequestHandlerVerticle(router));
         vertx.deployVerticle(new CollectorVerticle(router));
+        vertx.deployVerticle(new PhoneVerticle(router));
         log.info("All verticles has been signalled");
     }
 
