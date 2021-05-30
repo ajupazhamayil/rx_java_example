@@ -1,2 +1,1 @@
-# future-stock
-Future stock 
+# RX Java - Vertx Example 
